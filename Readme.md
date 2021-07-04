@@ -8,8 +8,8 @@ This repository is intended to bring together information about how different co
 
 ### Code Styling + Conventions
 When multiple people are working on a project, it is important to have a shared set of styling conventions. This makes reviewing changes + merging much easier. Included in this repo are a set of style config files for use with projects, sorted by language:
-- [[php]](php/Readme.md)
-- [[JavaScript]](js/Readme.md)
+- [php](php/Readme.md)
+- [JavaScript](js/Readme.md)
 
 ## TODO:
 - Bring in information about Laravel Projects / Packages / default setups.

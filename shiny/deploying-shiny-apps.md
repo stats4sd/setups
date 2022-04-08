@@ -1,19 +1,33 @@
 ## Deploy a Shiny App to our main Shiny server
 
-Public repos owned by Stats4SD on Github can use a custom GitHub Action to get deployed to our Shiny server. The default action is configured as follows:
+Public repositories owned by Stats4SD on Github can use a custom GitHub Action to get deployed to our Shiny server. To do this:
+ 
+ 1. Go to your github repository, and go to the Actions tab. 
+ 2. Find the "Deploy To Stats4SD Shiny Server Workflow" Action and click "setup this workflow"
+  - If your project is recognised as mostly R code, this workflow should appear as one of the 'suggested' workflows at the top of the list.
+ 3. This will add a new file into your repository at `.github/workflows/shiny-deployment.yml`. Don't edit the file - just click the green "start commit" button in the top-right, then the "commit new file" button to submit.
+ 
+ That's it. Now, your Github repo is setup to do the following:
+  - **Deploy to Staging:** every time you deploy to the default / main branch, the action will run and the code will be deployed to the *staging* environment at https://shiny.stats4sdtest.online
+ - **Deploy to Production:**: every time you create a new 'release' on Github, this action will run and the code will be deployed to the *live* environment at https://shiny.stats4sd.org.
+ 
+ **Monitoring Deployment / Handling Errors**
+ You can check the progress and outcome of any deployment by looking at the Actions tab on the Github repo. You will see a list of previous workflows, with a green tick (success), a red cross (fail) or an orange circle (still in progress...). You can retry failed deployments by clicking on it, then in the top-right selecting "re-run failed jobs". 
+ 
+ Currently, errors trigger an email to support@stats4sd.org, with attached logs to help fix the issue.
 
-- When a new commit is pushed to the `main` branch, the repo is deployed to the staging environment on the shiny server. (https://shiny.stats4sdtest.online)
-- When a new release is published, that release is deployed to the live environment on the shiny server (https://shiny.stats4sd.org/)
 
-Comments:
+## Deploy a **Private** Repository:
 
 - The action relies on 2 organisation-level GitHub Secrets: 
 	- SHINYSERVERURL = the endpoint that the action will POST to.
 	- SHINYDEPLOYSECRET = the very long random(ish) string that the server uses to confirm that the POST request is valid. 
 
-> Private repos cannot use organisastion secrets. To deploy a private repo, you must create these 2 secrets within the repo itself. The secrets are available on 1Password (Search for Github Shiny Secret). 
-> You will also need to create a custom action, as the organisation-level action will not be available. You can copy the action from the Stats4SD `.github` repo [here](https://github.com/stats4sd/.github/blob/main/workflow-templates/shiny-deployment.yml):
-> 
+Private repos cannot use organisastion secrets. To deploy a private repo, you must create these 2 secrets within the repo itself. The secrets are available on 1Password (Search for Github Shiny Secret). 
+
+You will also need to create a custom action, as the organisation-level action will not be available. You can copy the action from the Stats4SD `.github` repo [here](https://github.com/stats4sd/.github/blob/main/workflow-templates/shiny-deployment.yml):
+
+
 
 ## Deploy a Shiny App to a different server
 

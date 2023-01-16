@@ -1,0 +1,9 @@
+# Deploy a new Laravel Project
+
+- We use Laravel Forge to deploy and manage all Laravel platforms;
+- We host the systems on Linode servers.
+
+
+## Choose / create a server
+
+A server can host multiple sites / applications, so you do not always need to create a new server for a new project. 

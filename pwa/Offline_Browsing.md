@@ -11,7 +11,7 @@ If you need a comprehensive introduction for progressive web apps (PWA), please 
 
 
 ## What Does Progressive Means?
- - Progressive means it is continuing to have new features from time to time, you can add new PWA features to your web site progressively
+ - The word "Progressive" means it is continuing to have new features from time to time, you can add new PWA features to your web site progressively
  - Project Fugu, to track capabilities in different platforms
 
 
@@ -26,11 +26,11 @@ If you need a comprehensive introduction for progressive web apps (PWA), please 
 ## Browser Cached Storage
  - Server returned responses can be stored into browser cached storage for offline browsing in future
  - It stores the whole response from server
- - Because it is in request / response level, which is more in HTTP level. It is regardless of server side and client side programming languages
+ - Because it is in request / response level (i.e. more in HTTP level). It is regardless of server side and client side programming languages
 
 
-## How Many PWA Features Are Supported?
- - It depends on which browser and what is the browser version
+## How Many PWA Features Are Supported In User Device?
+ - It depends on which browser and version that is being used in user device
  - It is hard to guarantee from developer side, because user may use any browser with any browser version
 
 

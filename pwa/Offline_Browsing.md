@@ -1,5 +1,6 @@
 # Progressive Web App (PWA) Offline Browsing
 
+
 ## Note
  - The most attractive feature of progressive web app is offline browsing, that means it works offline
  - My study is mainly focus on offline browsing
@@ -41,9 +42,11 @@ If you need a comprehensive introduction for progressive web apps (PWA), please 
    - iPhone Safari supports offline browsing feature, but it does not support app installation feature and splash screen feature
 
 Progressive Web Apps - Cross-browser compatibility
+
 https://web.dev/learn/pwa/progressive-web-apps/#cross-browser-compatibility
 
 Progressive Web Apps Compatibility
+
 https://firt.dev/notes/pwa
 
 
@@ -78,10 +81,11 @@ https://github.com/shailesh-ladumor/laravel-pwa
 
 P.S. Please note that there is a modification required in one program file "laravel-pwa/src/stubs/sw.stub"
 
+```
 line 53
 change from: if(!event.request.url.startsWith('http')){
 change to  : if(event.request.url.startsWith('http')){
-
+```
 
 ### Browser Dev Tools [F12] Application Tab
 
@@ -96,7 +100,7 @@ Tools and debug - Web app manifest tools
 https://web.dev/learn/pwa/tools-and-debug/#web-app-manifest-tools
 
 
-## File Description For PWA Files:
+## File Description For PWA Files
 
 1. logo.png: app icon, normally with 512 x 512 pixels
 
@@ -109,20 +113,22 @@ https://web.dev/learn/pwa/tools-and-debug/#web-app-manifest-tools
 5. app.blade.php: This is a PHP blade view file to be included for all pages. To include app icon, manifest file, service worker Javascript file in home page
 
 
-## Offline Browsing Considerations:
+## Offline Browsing Considerations
 
  - Be aware and be responsible for what you store in user's browser cached storage. As the responses could occupy huge storage space in user computer and/or mobile phone.
 
  - There is a storage limit for each PWA. (TBC for exact limit). Use storage space wisely to store essential responses only.
 
- - For a Vue component with filter feature (e.g. search analysis result for different region)
-   - For a normal web app, we send request with filter parameter to server, server do the filtering, and then returns the filtered result
-   - For offline browsing, we may always get the same result from server, then do the filtering at Vue compoenent level
 
-   - Pros: store one response in cached storage when online, then it can support multiple enquiries when offline
-   - Cons: more network overhead when online, server always returns full dataset
+## Vue Component With Filter Feature
+
+  - For a normal web app, we send request with filter parameter to server, server do the filtering, and then returns the filtered result
+  - For offline browsing, we may always get the same result from server, then do the filtering at Vue compoenent level
+
+  - Pros: store one response in cached storage when online, then it can support multiple enquiries when offline
+  - Cons: more network overhead when online, server always returns full dataset
   
-   - Concerns: 
-     - We need to balance the performance (i.e. loading time) and technical feasibility (performance is different when showing 100 records and 100,000 records...)
-     - It is good if we could estimate how many records in response
+  - Concerns: 
+    - We need to balance the performance (i.e. loading time) and technical feasibility (performance is different when showing 100 records and 100,000 records...)
+    - It is good if we could estimate how many records in response
   

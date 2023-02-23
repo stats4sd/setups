@@ -64,9 +64,11 @@ https://firt.dev/notes/pwa
    5. cache-only, show response from cached storage
 
 Service Worker
+
 https://web.dev/learn/pwa/service-workers
 
 Serving
+
 https://web.dev/learn/pwa/serving/
 
  - However, none of the above caching strategies meet our needs. What we need:
@@ -77,6 +79,7 @@ https://web.dev/learn/pwa/serving/
 ## Laravel Package "Laravel PWA"
 
 "Laravel PWA" can do what we need:
+
 https://github.com/shailesh-ladumor/laravel-pwa
 
 P.S. Please note that there is a modification required in one program file "laravel-pwa/src/stubs/sw.stub"
@@ -97,6 +100,7 @@ change to  : if(event.request.url.startsWith('http')){
    - Cached storage
 
 Tools and debug - Web app manifest tools
+
 https://web.dev/learn/pwa/tools-and-debug/#web-app-manifest-tools
 
 

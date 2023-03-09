@@ -17,6 +17,8 @@ Before you start, ensure you have a unique subdomain for the new site. (See [Cre
 5. Setup the Laravel Queue worker.
 6. Install a new SSL certificate using Lets Encrypt.
 7. At the server level, add a new Scheduler entry for the site, to automatically run any scheduled tasks each minute.
+8. Optional extras.
+
 
 ## Process In Detail
 
@@ -146,4 +148,22 @@ A new scheduled job is created.
 
 
 
+## Optional Extras Via Recipes
+
+### If the Site uses R
+If a site uses R, then R must be installed on the server. To do that:
+
+- Go to [recipes](https://forge.laravel.com/recipes) in Laravel Forge and run the `Install R with RMarkdown support (Ubuntu 20.04)` recipe on the site's server.
+
+### If the site requires Laravel Backpack Pro or Spatie Pro Packages
+Some of our sites require one of the following paid packages:
+
+ - Laravel Backpack Pro
+ - Laravel Backpack Editable Fields
+ - Spatie Media Library Pro
+
+To allow these packages to be installed through composer, we must update the server's composer auth.json file. To do this, use the appropriate Forge recipe:
+
+- `Enable Backpack Pro Packages`
+- `Enable Spatie Pro Packages`
 

@@ -60,7 +60,7 @@ This is some text that would be rendered onto the page.
 {{ t("This is some text that would be rendered onto the page") }}
 
 ```
-(Note the `t()` must go inside `{{   }}`, the same as any other php function in a blade file.)
+(Note the `t()` must go inside `{{   }}` or `{!!  !!}` (for un-escaped html), the same as any other php function in a blade file.)
 
 
 ## Sync strings between the platform and translation.io

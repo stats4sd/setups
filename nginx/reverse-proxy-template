@@ -1,0 +1,30 @@
+   # Listen on port 80 and redirect all requests to the service running on port 3000
+    server {
+
+        # Your hostname should go here
+        server_name  shiny.stats4sdtest.online;
+        listen *:80;
+
+
+
+        location / {
+            proxy_set_header    Host $host;
+
+            # change localhost:3000 to suit the configuration of the service;
+
+            proxy_pass          http://localhost:3000;
+            proxy_redirect      http://localhost:3000/ $scheme://$host/;
+
+            proxy_http_version  1.1;
+
+            proxy_set_header    Upgrade $http_upgrade;
+            proxy_set_header    Connection $connection_upgrade;
+
+            proxy_connect_timeout 3h;
+            proxy_send_timeout 3h;
+            proxy_read_timeout 3h;
+        }
+
+
+
+}

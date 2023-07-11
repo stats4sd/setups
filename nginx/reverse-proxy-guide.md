@@ -11,8 +11,8 @@
    3. `sudo snap install --classic certbot`
    4. `sudo ln -s /snap/bin/certbot /usr/bin/certbot`
 5. Add a new symbolic link in /etc/nginx/site-enabled
-   `cd /etc/nginx/site-enabled`
-   `ln -s /etc/nginx/sites-available/odk-print.stats4sdtest.online odk-print.stats4sdtest.online`
+   1. `cd /etc/nginx/site-enabled`
+   2. `ln -s /etc/nginx/sites-available/odk-print.stats4sdtest.online odk-print.stats4sdtest.online`
 6. Run certbox with the nginx flag to automatically detect and update your nginx configuration: `sudo certbot --nginx`
    1. You may be asked to select which domain/sub-domain to get a certificate for.
    2. The command will get the certificate, automatically update the nginx config file *and* setup a cron job to automatically renew the certificate every 90 days.

@@ -7,11 +7,11 @@ Follow the installation instructions [here](https://laravel.com/docs/10.x/broadc
 
     - `npm install --save-dev laravel-echo pusher-js`
     - setup Echo in the main app.js (or which-ever file is used as the entrypoint for JavaScript):
-    
+
 Then setup the PHP side
     - `composer require pusher/pusher-php-server`
     - Uncomment `App\Providers\BroadcastServiceProvider::class` inside `/config/app.js`
-    
+
 
 #### For Vite-based applications
 
@@ -116,6 +116,7 @@ VITE_PUSHER_HOST=127.0.0.1
 VITE_PUSHER_PORT=6001
 VITE_PUSHER_PROXY_PORT=6001
 VITE_PUSHER_APP_CLUSTER=mt1
+
 ```
 
 (Or, for Laravel Mix apps, replace **VITE_** with **MIX_**
@@ -159,7 +160,7 @@ If you do not see these entries, it means that Laravel Echo is not running on th
 
 # For use with Laravel Filament
 
-Laravel Filament has a slightly different way to setup Laravel Echo. If you're using the admin panel, instead of creating a separate JS file for your Echo config, you should put it into `/config/filament.php`. There is a `"broadcasting" => [ "echo" ]` entry that is commented out by default. The `echo` array should be the exact config you would need in the JS file, as behind the scenes Filament runs `@js(config('filament.broadcasting.echo')` to generate the Echo instance in JavaScript. 
+Laravel Filament has a slightly different way to setup Laravel Echo. If you're using the admin panel, instead of creating a separate JS file for your Echo config, you should put it into `/config/filament.php`. There is a `"broadcasting" => [ "echo" ]` entry that is commented out by default. The `echo` array should be the exact config you would need in the JS file, as behind the scenes Filament runs `@js(config('filament.broadcasting.echo')` to generate the Echo instance in JavaScript.
 
 So, e.g: inside `config/filament.php`:
 
